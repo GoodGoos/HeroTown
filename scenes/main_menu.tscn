@@ -1,0 +1,579 @@
+[gd_scene format=3 uid="uid://c7hs6sdnkgtj2"]
+
+[ext_resource type="Script" uid="uid://ub2f75jyewjv" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://drbu7echikhwv" path="res://assets/image/background/menu_v3.png" id="2_8ln24"]
+[ext_resource type="StyleBox" uid="uid://c3h7w2gki0ehu" path="res://presets/but_main_menu.tres" id="3_jix8l"]
+[ext_resource type="StyleBox" uid="uid://dmcju3m0pjdy6" path="res://presets/but_main_menu_hover.tres" id="4_glbon"]
+[ext_resource type="StyleBox" uid="uid://bs3gn7ksopgw6" path="res://presets/but_main_menu_press.tres" id="4_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.18431373, 0.20392157, 0.2784314, 0.56078434)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.8352941, 0.8352941, 0.8352941, 0.31764707)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="MainMenu" type="Control" unique_id=944864557]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ln24")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1625290148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8ln24")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1154171116]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.51458335
+anchor_right = -0.0015625
+anchor_bottom = 0.51458335
+offset_left = 43.0
+offset_top = -176.5
+offset_right = 415.0
+offset_bottom = 176.5
+grow_vertical = 2
+theme_override_constants/separation = 26
+metadata/_edit_use_anchors_ = true
+
+[node name="New Game" type="Button" parent="VBoxContainer" unique_id=120497874]
+custom_minimum_size = Vector2(0.01, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_jix8l")
+theme_override_styles/pressed = ExtResource("4_jix8l")
+theme_override_styles/hover = ExtResource("4_glbon")
+text = "New Game"
+
+[node name="Load" type="Button" parent="VBoxContainer" unique_id=1459292535]
+custom_minimum_size = Vector2(0.01, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_jix8l")
+theme_override_styles/pressed = ExtResource("4_jix8l")
+theme_override_styles/hover = ExtResource("4_glbon")
+text = "Load"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=88823216]
+custom_minimum_size = Vector2(0.01, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_jix8l")
+theme_override_styles/pressed = ExtResource("4_jix8l")
+theme_override_styles/hover = ExtResource("4_glbon")
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=62001995]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_jix8l")
+theme_override_styles/pressed = ExtResource("4_jix8l")
+theme_override_styles/hover = ExtResource("4_glbon")
+text = "Exit"
+
+[node name="SaveMenu" type="Control" parent="." unique_id=721541203]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -841.0
+offset_top = -192.0
+offset_bottom = 309.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SaveMenuPanel" type="Panel" parent="SaveMenu" unique_id=1686137589]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.5
+offset_top = -246.5
+offset_right = 389.5
+offset_bottom = 246.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, -139)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
+
+[node name="SaveCard" type="GridContainer" parent="SaveMenu/SaveMenuPanel" unique_id=2142579752]
+custom_minimum_size = Vector2(750, 0)
+custom_maximum_size = Vector2(750, -1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -204.0
+offset_right = 375.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 18
+columns = 3
+
+[node name="Panel" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=655945241]
+z_index = 10
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel" unique_id=1661840990]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel/Panel" unique_id=226299557]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel" unique_id=312975371]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="Panel2" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=877967311]
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel2" unique_id=1995142022]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel2/Panel" unique_id=1790032865]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel2" unique_id=1291804125]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="Panel3" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=511020973]
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel3" unique_id=1872495114]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel3/Panel" unique_id=1001905053]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel3" unique_id=727809684]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="Panel4" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=1385834530]
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel4" unique_id=1934352091]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel4/Panel" unique_id=494998026]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel4" unique_id=509130785]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="Panel5" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=879484366]
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel5" unique_id=1161236548]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel5/Panel" unique_id=1430106496]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel5" unique_id=918151190]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="Panel6" type="Button" parent="SaveMenu/SaveMenuPanel/SaveCard" unique_id=87991389]
+custom_minimum_size = Vector2(210, 147)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+
+[node name="Panel" type="Panel" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel6" unique_id=1619155810]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(190, 107)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 112.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="Image" type="TextureRect" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel6/Panel" unique_id=1143052949]
+custom_minimum_size = Vector2(190, 107)
+custom_maximum_size = Vector2(-1, 107)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SaveMenu/SaveMenuPanel/SaveCard/Panel6" unique_id=302653400]
+custom_minimum_size = Vector2(190, 0)
+custom_maximum_size = Vector2(190, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -28.0
+offset_right = 95.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Дата: хх.хх.ххxx Время: 21:30"
+
+[node name="PageBut" type="GridContainer" parent="SaveMenu/SaveMenuPanel" unique_id=1009662359]
+custom_minimum_size = Vector2(700, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -353.0
+offset_top = -98.0
+offset_right = 353.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 34
+columns = 10
+
+[node name="Button" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=216030885]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "А"
+
+[node name="Button2" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=322433176]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "1"
+
+[node name="Button3" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1069286740]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "2"
+
+[node name="Button4" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1183739533]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "3"
+
+[node name="Button5" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=207157163]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "4"
+
+[node name="Button6" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=247613836]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "5"
+
+[node name="Button7" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1874372939]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "6"
+
+[node name="Button8" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1487700999]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "7"
+
+[node name="Button9" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1461568134]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "8"
+
+[node name="Button10" type="Button" parent="SaveMenu/SaveMenuPanel/PageBut" unique_id=1788540435]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "9"
+
+[connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_button_2_pressed"]

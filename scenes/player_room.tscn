@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b2nvxsrv142g8"]
+
+[ext_resource type="Script" uid="uid://pgx6wl8ot3ry" path="res://scripts/player_room.gd" id="1_r1x0t"]
+[ext_resource type="Texture2D" uid="uid://b036jv278vfxl" path="res://assets/image/background/player_room_v2_day.png" id="1_tkdg1"]
+
+[node name="player_room" type="Control" unique_id=1234025611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1x0t")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=550194911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tkdg1")
+expand_mode = 1

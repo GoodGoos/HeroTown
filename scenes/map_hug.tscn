@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cpl03rvx3mibf"]
+
+[ext_resource type="Script" uid="uid://b64gwvtrnvu2q" path="res://scripts/map_hug.gd" id="1_aj3u4"]
+[ext_resource type="Texture2D" uid="uid://c2v0wdwf3u0pg" path="res://assets/image/background/map_city_day.png" id="1_xgbs0"]
+
+[node name="map_hug" type="CanvasLayer" unique_id=838674674]
+script = ExtResource("1_aj3u4")
+
+[node name="LocationsContainer" type="Control" parent="." unique_id=2141256264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="LocationsContainer" unique_id=1490548831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xgbs0")
+expand_mode = 1
+
+[node name="HouseButton" type="Button" parent="LocationsContainer/Background" unique_id=753512747]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 500.0
+offset_right = 958.0
+offset_bottom = 548.0
+
+[node name="CityFountain" type="Button" parent="LocationsContainer/Background" unique_id=923112850]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 283.0
+offset_right = 636.0
+offset_bottom = 328.0

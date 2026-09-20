@@ -21,6 +21,7 @@ func _ready() -> void:
 	if not data:
 		data = GameData.new()
 
+
 func reset_game() -> void:
 	data = GameData.new()
 	print("Создана новая сессия игры. Данные сброшены.")
@@ -113,7 +114,8 @@ func advance_time(steps: int = 1) -> void:
 			data.current_time = GameData.TimeOfDay.MORNING
 			data.current_day += 1
 			
-	print("Время: ", data.TIME_NAMES[data.current_time], " | День: ", data.current_day)
+	print("Время изменено. Сейчас: ", data.current_time)
+
 	time_changed.emit()
 
 # Вспомогательный метод для получения текущего дня недели (0 = Понедельник, 6 = Воскресенье)
@@ -132,9 +134,10 @@ func get_time_string() -> String:
 # --- РАБОТА С ФЛАГАМИ ---
 func set_flag(flag_name: String, value: Variant) -> void:
 	if data:
-		data.flags[flag_name] = value
+		data.world.flags[flag_name] = value
 
 func get_flag(flag_name: String, default_value: Variant = false) -> Variant:
-	if data and data.flags.has(flag_name):
-		return data.flags[flag_name]
+	if data and data.world.flags.has(flag_name):
+		return data.world.flags[flag_name]
+
 	return default_value

@@ -33,23 +33,67 @@ var current_day: int = 1
 # Путь к текущей сцене
 var current_scene_path: String = "res://scenes/player_room.tscn"
 
-# Главный словарь флагов (состояние мира, прогресс квестов, важные события)
-# Пример: flags["met_airi"] = true, flags["rule_1_active"] = true
-var flags: Dictionary = {}
-
-# [Здесь в дальнейшем пропишем словари персонажей, их характеристики и уровень правил]
+# Главные словари (состояние мира, прогресс отношений, важные события)
+var world: WorldState = WorldState.new()
+var player: PlayerState = PlayerState.new()
+var characters: Dictionary = {}
+var trigger_states: Dictionary = {}
 
 
 # --- СЕРИАЛИЗАЦИЯ (Сбор и чтение данных) ---
 
 func to_dict() -> Dictionary:
-	var dict: Dictionary = {}
-	for prop in get_property_list():
-		if prop.usage & PROPERTY_USAGE_SCRIPT_VARIABLE:
-			dict[prop.name] = get(prop.name)
-	return dict
+	var result: Dictionary = {
+		"is_map_open": is_map_open,
+		"current_time": current_time,
+		"current_day": current_day,
+		"current_scene_path": current_scene_path,
+		"world": world.to_dict(),
+		"player": player.to_dict(),
+		"characters": {},
+		"trigger_states": {}
+	}
+
+	for character_id in characters:
+		var character_state: CharacterState = characters[character_id]
+		result["characters"][character_id] = character_state.to_dict()
+
+	for trigger_id in trigger_states:
+		var state: trigger_state = trigger_states[trigger_id]
+		result["trigger_states"][trigger_id] = state.to_dict()
+	return result
+
 
 func from_dict(dict: Dictionary) -> void:
-	for key in dict.keys():
-		if key in self:
-			set(key, dict[key])
+	is_map_open = dict.get("is_map_open", false)
+	current_time = dict.get("current_time", TimeOfDay.MORNING)
+	current_day = dict.get("current_day", 1)
+	current_scene_path = dict.get(
+		"current_scene_path",
+		"res://scenes/player_room.tscn"
+	)
+
+	world = WorldState.new()
+	world.from_dict(dict.get("world", {}))
+
+	player = PlayerState.new()
+	player.from_dict(dict.get("player", {}))
+
+	characters.clear()
+
+	var characters_data: Dictionary = dict.get("characters", {})
+
+	for character_id in characters_data:
+		var character_state := CharacterState.new()
+		character_state.from_dict(characters_data[character_id])
+		characters[character_id] = character_state
+	
+	trigger_states.clear()
+
+	var trigger_states_data: Dictionary = dict.get("trigger_states", {})
+
+	for trigger_id in trigger_states_data:
+		var state := trigger_state.new()
+		state.from_dict(trigger_states_data[trigger_id])
+		trigger_states[trigger_id] = state
+	

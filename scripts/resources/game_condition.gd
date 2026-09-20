@@ -1,5 +1,7 @@
-class_name GameCondition extends Resource
+class_name game_condition
+extends Resource
 
-# Этот метод будут переопределять все твои будущие условия
-func is_met(character_id: String) -> bool:
-	return false # По умолчанию всегда false
+
+# Проверяет условие.
+func is_met(context: game_context) -> bool:
+	return false

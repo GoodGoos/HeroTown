@@ -1,5 +1,7 @@
-class_name GameAction extends Resource
+class_name game_action
+extends Resource
 
-# Этот метод будут переопределять все твои действия
-func execute(character_id: String) -> void:
-	pass # Ничего не делаем по умолчанию
+
+# Выполняет действие.
+func execute(context: game_context) -> void:
+	pass

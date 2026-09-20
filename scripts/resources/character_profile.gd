@@ -1,4 +1,4 @@
-class_name CharacterProfile extends Resource
+class_name character_profile extends Resource
 
 # Уникальный ID (например, "airi"). Используем его для сохранения в JSON
 @export var id: String = ""

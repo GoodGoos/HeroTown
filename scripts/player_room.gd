@@ -1,6 +1,7 @@
 extends Control
 
 @onready var background: TextureRect = $TextureRect
+var data: GameData
 
 const DAY_TEXTURE = preload("res://assets/image/Background/player_room_v2_day.png")
 const NIGHT_TEXTURE = preload("res://assets/image/Background/player_room_v2_night.jpg")
@@ -8,10 +9,32 @@ const NIGHT_TEXTURE = preload("res://assets/image/Background/player_room_v2_nigh
 func _ready() -> void:
 	# 1. Сразу при запуске сцены устанавливаем правильный фон
 	_update_visuals()
+	if not data:
+		data = GameData.new()
 	
 	# 2. Подписываемся на смену времени
 	if GameManager:
 		GameManager.time_changed.connect(_on_time_changed)
+		
+	var evening := TriggerRegistry.get_trigger("evening")
+
+	if evening:
+		print("Событие найдено: ", evening.display_name)
+		print("ID: ", evening.id)
+		print("Условий: ", evening.conditions.size())
+
+		var context := game_context.new(data)
+		var condition := evening.conditions[0]
+		
+		print("GameManager.data.current_time: ", GameManager.data.current_time)
+		print("PlayerRoom data.current_time: ", data.current_time)
+		print("Одинаковый объект data: ", GameManager.data == data)
+
+		print("Текущее время: ", data.current_time)
+		print("Условие выполнено: ", condition.is_met(context))
+	else:
+		print("Событие evening НЕ найдено")
+
 
 func _on_time_changed() -> void:
 	# 3. УБРАЛИ "if visible:" — нам не важно, видна комната или нет, 

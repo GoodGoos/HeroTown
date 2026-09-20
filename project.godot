@@ -22,6 +22,10 @@ Transition="*uid://bdcemh5va1kgc"
 HugLayer="*uid://3styfl3rapxe"
 GameManager="*uid://bgfl2bhs4wiyk"
 MapHug="*uid://cpl03rvx3mibf"
+CharacterManager="*uid://upo04y5l7ktk"
+CharacterRegistry="*uid://omifirj40pi6"
+TriggerManager="*uid://corr0t14qrbsp"
+TriggerRegistry="*uid://jr12n43nx63t"
 
 [display]
 

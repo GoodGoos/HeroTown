@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dl8jpe36i6gh1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tko23"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.3019608)
+border_width_top = 3
+border_color = Color(0.9561803, 0.62158567, 0.073735945, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[node name="EventButton" type="Node2D" unique_id=997148830]
+
+[node name="Button" type="Button" parent="." unique_id=1076533018]
+custom_minimum_size = Vector2(0, 25)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -15.5
+offset_right = 160.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tko23")
+text = "Вечер"

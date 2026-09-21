@@ -48,6 +48,39 @@ func load_triggers() -> void:
 
 	dir.list_dir_end()
 
+# Возвращает события, доступные в текущем контексте.
+func get_available_triggers(context: game_context) -> Array[trigger_definition]:
+	var result: Array[trigger_definition] = []
+
+	if context == null:
+		return result
+
+	for trigger_id in triggers:
+		var trigger: trigger_definition = triggers[trigger_id]
+
+		# Если у события указана локация, проверяем её.
+		if not trigger.location_id.is_empty():
+			if trigger.location_id != context.location:
+				continue
+
+		# Проверяем все условия события.
+		var conditions_met := true
+
+		for condition in trigger.conditions:
+			if condition == null:
+				continue
+
+			if not condition.is_met(context):
+				conditions_met = false
+				break
+
+		if not conditions_met:
+			continue
+
+		result.append(trigger)
+
+	return result
+
 
 # Возвращает событие по ID.
 func get_trigger(trigger_id: String) -> trigger_definition:

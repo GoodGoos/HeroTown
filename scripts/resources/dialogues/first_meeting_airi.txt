@@ -1,0 +1,22 @@
+id: "first_meeting_airi"
+
+# First meeting
+
+@position vili 0.15
+@position bili 0.50
+
+@facing vili right
+@facing bili left
+
+vili: "ввввввв"
+vili: "вввввв"
+vili: "ввввв"
+vili: "ввв"
+
+bili [happy]: "аааааааааа"
+
+vili: "Да."
+
+@position bili 0.90
+
+bili [happy_shiny]: "fffffffff"

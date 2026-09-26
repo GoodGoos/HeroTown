@@ -26,6 +26,7 @@ CharacterManager="*uid://upo04y5l7ktk"
 CharacterRegistry="*uid://omifirj40pi6"
 TriggerManager="*uid://corr0t14qrbsp"
 TriggerRegistry="*uid://jr12n43nx63t"
+DialogueRegistry="*uid://b0gxdryo0kwg8"
 
 [display]
 

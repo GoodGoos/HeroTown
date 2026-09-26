@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://7gojevkj5gcv"]
+
+[ext_resource type="Script" uid="uid://buatc2141ttmm" path="res://scripts/dialogue_ui.gd" id="1_dwk8m"]
+[ext_resource type="Script" uid="uid://b5g3met5plyn" path="res://scripts/dialogue/dialogue_character_layer.gd" id="2_6q285"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q285"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx1sv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6usr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="DialogueUi" type="Control" unique_id=661653825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwk8m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1912227814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="Characters" type="Control" parent="." unique_id=659923818]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -520.5
+offset_top = -569.0
+offset_right = 520.5
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_6q285")
+
+[node name="DialoguePanel" type="ColorRect" parent="." unique_id=1335568400]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -520.5
+offset_top = -217.0
+offset_right = 520.5
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.43529412)
+
+[node name="SpeakerName" type="Label" parent="DialoguePanel" unique_id=1475852104]
+layout_mode = 0
+offset_right = 178.5
+offset_bottom = 54.0
+
+[node name="DialogueText" type="Label" parent="DialoguePanel" unique_id=1698894486]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ContinueButton" type="Button" parent="." unique_id=65650788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q285")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jx1sv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e6usr")

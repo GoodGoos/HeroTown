@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pgx6wl8ot3ry" path="res://scripts/player_room.gd" id="1_r1x0t"]
 [ext_resource type="Texture2D" uid="uid://b036jv278vfxl" path="res://assets/image/background/player_room_v2_day.png" id="1_tkdg1"]
+[ext_resource type="Script" uid="uid://2kbghx1wqxh4" path="res://scripts/dialogue/dialogue_parser_test.gd" id="3_fsfg0"]
 
 [node name="player_room" type="Control" unique_id=1234025611]
 layout_mode = 3
@@ -21,3 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_tkdg1")
 expand_mode = 1
+
+[node name="Node" type="Node" parent="." unique_id=722754412]
+script = ExtResource("3_fsfg0")

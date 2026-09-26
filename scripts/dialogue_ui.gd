@@ -1,14 +1,15 @@
-extends Control
+extends CanvasLayer
 
 
 signal dialogue_finished()
 
 
-@onready var speaker_name: Label = $DialoguePanel/SpeakerName
-@onready var dialogue_text: Label = $DialoguePanel/DialogueText
-@onready var continue_button: Button = $ContinueButton
+@onready var speaker_name: Label = $Root/DialoguePanel/SpeakerName
+@onready var dialogue_text: Label = $Root/DialoguePanel/DialogueText
+@onready var continue_button: Button = $Root/ContinueButton
 
-@onready var character_layer: DialogueCharacterLayer = $Characters
+@onready var character_layer: DialogueCharacterLayer = $Root/Characters
+@onready var root: Control = $Root
 
 var player: DialoguePlayer = null
 
@@ -18,10 +19,10 @@ func _ready() -> void:
 	GameManager.game_loaded.connect(_on_game_loaded)
 
 	# Временный запуск для проверки DialogueUI.
-	var dialogue := DialogueRegistry.get_dialogue("first_meeting_airi")
+	#var dialogue := DialogueRegistry.get_dialogue("first_meeting_airi")
 
-	if dialogue != null:
-		start_dialogue(dialogue)
+	#if dialogue != null:
+	#	start_dialogue(dialogue)
 
 
 func start_dialogue(
@@ -50,7 +51,7 @@ func start_dialogue(
 	player.dialogue_finished.connect(_on_dialogue_finished)
 	
 	
-	visible = true
+	root.visible = true
 	player.play(definition, start_index)
 	if restore_character_state:
 		restore_dialogue_character_state()
@@ -101,7 +102,7 @@ func _on_command_requested(command: DialogueCommand) -> void:
 
 func _on_dialogue_finished() -> void:
 	player = null
-	visible = false
+	root.visible = false
 
 	GameManager.data.active_dialogue_id = ""
 	GameManager.data.active_dialogue_index = 0

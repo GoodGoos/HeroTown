@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b1526iogbnwl6" path="res://scripts/resources/game_action.gd" id="1_imxqf"]
 [ext_resource type="Script" uid="uid://dbi8n35idlxus" path="res://scripts/resources/game_condition.gd" id="2_kutk2"]
-[ext_resource type="Script" uid="uid://yrak4352whe3" path="res://scripts/resources/actions/advance_time_action.gd" id="2_nca7k"]
 [ext_resource type="Script" uid="uid://db800p6jnl11i" path="res://scripts/resources/actions/dialogue_action.gd" id="3_lbolk"]
 [ext_resource type="Script" uid="uid://djlihn0rynlv5" path="res://scripts/resources/trigger_definition.gd" id="3_nca7k"]
-
-[sub_resource type="Resource" id="Resource_lbolk"]
-script = ExtResource("2_nca7k")
-metadata/_custom_type_script = "uid://yrak4352whe3"
 
 [sub_resource type="Resource" id="Resource_0gqoa"]
 script = ExtResource("3_lbolk")
@@ -19,5 +14,6 @@ metadata/_custom_type_script = "uid://db800p6jnl11i"
 script = ExtResource("3_nca7k")
 id = "test_dialogue_chain"
 display_name = "Test dialogue"
-actions = Array[ExtResource("1_imxqf")]([SubResource("Resource_lbolk"), SubResource("Resource_0gqoa")])
+repeatable = true
+actions = Array[ExtResource("1_imxqf")]([SubResource("Resource_0gqoa")])
 metadata/_custom_type_script = "uid://djlihn0rynlv5"

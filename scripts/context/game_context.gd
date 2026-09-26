@@ -18,7 +18,7 @@ var trigger = null
 var event_data: Dictionary = {}
 
 # UI диалогов, который может использовать действие.
-var dialogue_ui: Control = null
+var dialogue_ui = null
 
 func _init(
 	data: GameData,

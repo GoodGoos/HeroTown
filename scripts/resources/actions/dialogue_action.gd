@@ -1,9 +1,7 @@
 class_name dialogue_action
 extends game_action
 
-
 @export var dialogue_id: String = ""
-
 
 func execute(context: game_context) -> bool:
 	if context == null or context.dialogue_ui == null:

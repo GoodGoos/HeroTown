@@ -39,25 +39,29 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[node name="DialogueUi" type="Control" unique_id=661653825]
+[node name="DialogueUi" type="CanvasLayer" unique_id=1352935379]
+layer = 20
+script = ExtResource("1_dwk8m")
+
+[node name="Root" type="Control" parent="." unique_id=753431031]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dwk8m")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1912227814]
+[node name="Background" type="ColorRect" parent="Root" unique_id=1912227814]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.2)
+color = Color(0, 0, 0, 0.2509804)
 
-[node name="Characters" type="Control" parent="." unique_id=659923818]
+[node name="Characters" type="Control" parent="Root" unique_id=659923818]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -71,7 +75,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_6q285")
 
-[node name="DialoguePanel" type="ColorRect" parent="." unique_id=1335568400]
+[node name="DialoguePanel" type="ColorRect" parent="Root" unique_id=1335568400]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -85,12 +89,12 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0.43529412)
 
-[node name="SpeakerName" type="Label" parent="DialoguePanel" unique_id=1475852104]
+[node name="SpeakerName" type="Label" parent="Root/DialoguePanel" unique_id=1475852104]
 layout_mode = 0
 offset_right = 178.5
 offset_bottom = 54.0
 
-[node name="DialogueText" type="Label" parent="DialoguePanel" unique_id=1698894486]
+[node name="DialogueText" type="Label" parent="Root/DialoguePanel" unique_id=1698894486]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -100,7 +104,7 @@ offset_top = -162.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ContinueButton" type="Button" parent="." unique_id=65650788]
+[node name="ContinueButton" type="Button" parent="Root" unique_id=65650788]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

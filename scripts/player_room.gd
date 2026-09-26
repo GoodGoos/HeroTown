@@ -2,8 +2,6 @@ extends Control
 
 @onready var background: TextureRect = $TextureRect
 
-@onready var dialogue_ui: Control = $DialogueUI
-
 const DAY_TEXTURE = preload("res://assets/image/Background/player_room_v2_day.png")
 const NIGHT_TEXTURE = preload("res://assets/image/Background/player_room_v2_night.jpg")
 
@@ -44,5 +42,8 @@ func _on_test_event_button_pressed() -> void:
 		"",
 		trigger
 	)
+
+	# Передаём глобальный DialogueUI в контекст события.
+	context.dialogue_ui = DialogueUI
 
 	TriggerManager.try_execute(trigger, context)

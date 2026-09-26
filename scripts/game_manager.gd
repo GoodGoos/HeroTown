@@ -5,6 +5,8 @@ var data: GameData = null
 signal game_state_changed(is_active: bool)
 signal time_changed
 
+# Срабатывает после полной загрузки GameData.
+signal game_loaded
 
 # Состояние карты
 func update_ui_state(map_open: bool) -> void:
@@ -85,7 +87,9 @@ func load_game(save_id: String = "default") -> bool:
 		# Передаем функцию, которая обновит данные ТОЛЬКО В ТЕМНОТЕ
 		Transition.change_scene(loaded_data["current_scene_path"], func():
 			data.from_dict(loaded_data) # Обновляем данные
-			time_changed.emit()         # Обновляем время
+			
+			time_changed.emit()
+			game_loaded.emit()
 			# Если нужно сбросить карту или интерфейс:
 			# MapHug.force_sync() 
 			if MapHug:

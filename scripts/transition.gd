@@ -19,13 +19,19 @@ func change_scene(target_path: String, callback: Callable = Callable()) -> void:
 	animation_player.play("fade")
 	await screen_blacked_out 
 	
-	# 3. ТУТ ЭКРАН ЧЕРНЫЙ. Выполняем твой коллбэк (загрузку данных)
-	if callback.is_valid():
-		callback.call()
+
+
 	
 	# 4. Смена сцены
 	if target_path != "":
 		get_tree().change_scene_to_file(target_path)
+
+	# Ждём, пока новая сцена и её _ready() будут обработаны.
+		await get_tree().process_frame
+
+	# 3. ТУТ ЭКРАН ЧЕРНЫЙ. Выполняем твой коллбэк (загрузку данных)
+	if callback.is_valid():
+		callback.call()
 	
 	# 5. Анимация открытия
 	animation_player.play_backwards("fade")

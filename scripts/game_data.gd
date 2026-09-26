@@ -4,6 +4,13 @@ extends RefCounted
 # Флаг: открыта ли карта
 var is_map_open: bool = false
 
+# Состояние текущего диалога.
+var active_dialogue_id: String = ""
+var active_dialogue_index: int = 0
+
+# Состояние персонажей текущего диалога.
+var active_dialogue_characters: Dictionary = {}
+
 enum TimeOfDay { MORNING, DAY, EVENING, NIGHT }
 
 # Названия фаз времени (константа, не сохраняется)
@@ -48,6 +55,9 @@ func to_dict() -> Dictionary:
 		"current_time": current_time,
 		"current_day": current_day,
 		"current_scene_path": current_scene_path,
+		"active_dialogue_id": active_dialogue_id,
+		"active_dialogue_index": active_dialogue_index,
+		"active_dialogue_characters": active_dialogue_characters,
 		"world": world.to_dict(),
 		"player": player.to_dict(),
 		"characters": {},
@@ -71,6 +81,13 @@ func from_dict(dict: Dictionary) -> void:
 	current_scene_path = dict.get(
 		"current_scene_path",
 		"res://scenes/player_room.tscn"
+	)
+	
+	active_dialogue_id = dict.get("active_dialogue_id", "")
+	active_dialogue_index = dict.get("active_dialogue_index", 0)
+	active_dialogue_characters = dict.get(
+	"active_dialogue_characters",
+	{}
 	)
 
 	world = WorldState.new()

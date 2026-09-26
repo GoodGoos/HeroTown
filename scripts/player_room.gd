@@ -2,6 +2,8 @@ extends Control
 
 @onready var background: TextureRect = $TextureRect
 
+@onready var dialogue_ui: Control = $DialogueUI
+
 const DAY_TEXTURE = preload("res://assets/image/Background/player_room_v2_day.png")
 const NIGHT_TEXTURE = preload("res://assets/image/Background/player_room_v2_night.jpg")
 
@@ -28,3 +30,19 @@ func _update_visuals() -> void:
 						current_time == GameData.TimeOfDay.NIGHT)
 						
 	background.texture = NIGHT_TEXTURE if is_night_time else DAY_TEXTURE
+
+func _on_test_event_button_pressed() -> void:
+	var trigger := TriggerRegistry.get_trigger("test_dialogue_chain")
+
+	if trigger == null:
+		push_warning("Тестовый триггер не найден.")
+		return
+
+	var context := game_context.new(
+		GameManager.data,
+		null,
+		"",
+		trigger
+	)
+
+	TriggerManager.try_execute(trigger, context)

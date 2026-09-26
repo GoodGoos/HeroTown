@@ -4,7 +4,7 @@ extends Node
 var player: DialoguePlayer
 
 
-func _ready() -> void:
+# func _ready() -> void:
 	var dialogue := DialogueRegistry.get_dialogue("first_meeting_airi")
 
 	if dialogue == null:
@@ -20,7 +20,6 @@ func _ready() -> void:
 	player.dialogue_finished.connect(_on_dialogue_finished)
 
 	player.play(dialogue)
-
 
 func _on_line_started(line: DialogueLine) -> void:
 	print(

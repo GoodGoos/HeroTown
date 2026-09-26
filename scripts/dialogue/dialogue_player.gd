@@ -11,7 +11,10 @@ var current_index: int = 0
 var is_playing: bool = false
 
 
-func play(definition: DialogueDefinition) -> void:
+func play(
+	definition: DialogueDefinition,
+	start_index: int = 0
+) -> void:
 	if definition == null:
 		return
 
@@ -20,7 +23,11 @@ func play(definition: DialogueDefinition) -> void:
 		return
 
 	dialogue = definition
-	current_index = 0
+	current_index = clamp(
+		start_index,
+		0,
+		dialogue.elements.size()
+	)
 	is_playing = true
 
 	_process_next_element()

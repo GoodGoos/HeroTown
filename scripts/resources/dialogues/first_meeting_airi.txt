@@ -2,8 +2,8 @@ id: "first_meeting_airi"
 
 # First meeting
 
-@position vili 0.15
-@position bili 0.50
+@position vili 0.30
+@position bili 1.00
 
 @facing vili right
 @facing bili left

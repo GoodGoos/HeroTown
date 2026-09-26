@@ -2,6 +2,11 @@ class_name game_action
 extends Resource
 
 
+signal finished
+
+
 # Выполняет действие.
-func execute(context: game_context) -> void:
-	pass
+# Возвращает true, если действие завершено сразу.
+func execute(context: game_context) -> bool:
+	finished.emit()
+	return true
